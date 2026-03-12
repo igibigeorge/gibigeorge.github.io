@@ -1,128 +1,1084 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>GIBI GEORGE PORTFOLIO</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gibi George — Business Analyst</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0D2137;
+      --navy-mid: #1A3A5C;
+      --blue: #1A5276;
+      --accent: #2E86C1;
+      --sky: #85C1E9;
+      --gold: #D4AC0D;
+      --white: #FAFBFC;
+      --offwhite: #F0F4F8;
+      --text: #1C2B3A;
+      --muted: #6B7E8F;
+      --border: #D8E4EE;
+    }
 
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-		<!-- Wrapper -->
-		
-			<div id="wrapper" class="fade-in">
+    html { scroll-behavior: smooth; }
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>GIBI GEORGE<br />
-						</h1>
-						<p>Business Analyst with IT Project Management Experience<br />
-						
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
 
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+    /* ─── NAV ──────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(13, 33, 55, 0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Portfoloio</a>
-					</header>
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #fff;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul class="links">
-							<li class="active"><a href="index.html">Projects</a></li>
-							
-						</ul>
-						<ul class="icons">
-							<li><a href="https://www.linkedin.com/in/igibigeorge/" class="icon brands alt fa-linkedin"><span class="label">linkedin</span></a></li>
-							<li><a href="https://github.com/igibigeorge" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-						</ul>
-						
-					</nav>
+    .nav-logo span { color: var(--sky); }
 
-				<!-- Main -->
-					<div id="main">
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--sky); }
 
-						<!-- Featured Post -->x
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="https://colab.research.google.com/drive/1SmetJZVvnd8HVXKIiKLMJ2Ubth92Aj54#scrollTo=C3oa7OlUzumU">A STUDY ON IMPACTS OF DATA ANALYTICS IN AUTOMATING  RISK  MANAGEMENT<br />
-									</a></h2>
-									<p>
-										This study underscores the potential of machine learning in automating and enhancing credit risk assessment.<br />
-									<br />
-									</p>
-								</header>
-								<a href="https://colab.research.google.com/drive/1SmetJZVvnd8HVXKIiKLMJ2Ubth92Aj54#scrollTo=C3oa7OlUzumU" class="image main"><img src="images/risk-management-strategy-1.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://colab.research.google.com/drive/1SmetJZVvnd8HVXKIiKLMJ2Ubth92Aj54#scrollTo=C3oa7OlUzumU" class="button large">View Project</a></li>
-								</ul>
-							</article>
+    /* ─── HERO ─────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, #1e4d7a 100%);
+      display: flex; align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 4rem 4rem;
+    }
 
-						
+    /* Grid overlay */
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(133,193,233,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(133,193,233,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
 
-						<!-- Footer -->	
-						
+    /* Large decorative circle */
+    #hero::after {
+      content: '';
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      border: 1px solid rgba(133,193,233,0.08);
+      top: -200px; right: -200px;
+    }
 
-					
-					</div>
-					
+    .hero-inner {
+      max-width: 1100px; margin: 0 auto; width: 100%;
+      position: relative; z-index: 2;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
 
-				<!-- Footer -->
-					<footer id="footer">
-						
+    .hero-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--sky);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.2s forwards;
+    }
 
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 0.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.35s forwards;
+    }
 
-						<section class="contact">
-							<section class="location">
-								<h3>Location</h3>
-								<p>Dublin, Ireland</p>
-								
-								<h4>Phone</h4>
-								<p><a href="tel:+353899414147">0899414147</a></p>
-								
-								<h4>Email</h4>
-								<p><a href="mailto:igibigeorge@gmail.com">igibigeorge@gmail.com</a></p>
-							</section>
-							
-							<section class="social">
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/igibigeorge/" class="icon brands alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/igibigeorge" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-						
-					</footer>
+    .hero-name em {
+      font-style: normal;
+      color: var(--sky);
+    }
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Gibi George</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
-					</div>
+    .hero-role {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.65);
+      font-weight: 400;
+      margin-bottom: 2rem;
+      line-height: 1.6;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.5s forwards;
+    }
 
-			</div>
+    .hero-tags {
+      display: flex; flex-wrap: wrap; gap: 0.6rem;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.65s forwards;
+    }
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			<script src="assets/js/script.js"></script>
+    .tag {
+      background: rgba(133,193,233,0.12);
+      border: 1px solid rgba(133,193,233,0.25);
+      color: var(--sky);
+      padding: 0.3rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
 
+    .hero-ctas {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.8s forwards;
+    }
 
-	</body>
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { background: #2471a3; transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.85);
+      padding: 0.8rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--sky); color: var(--sky); transform: translateY(-2px); }
+
+    /* Hero stats */
+    .hero-stats {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+      opacity: 0;
+      animation: fadeUp 0.6s 0.5s forwards;
+    }
+
+    .stat-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 8px;
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--sky));
+    }
+
+    .stat-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-number span { font-size: 1.2rem; color: var(--sky); }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.4;
+      font-weight: 400;
+    }
+
+    /* ─── SECTIONS ─────────────────────────────────── */
+    section { padding: 6rem 4rem; }
+
+    .section-inner { max-width: 1100px; margin: 0 auto; }
+
+    .section-label {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.8rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.15;
+    }
+
+    .section-rule {
+      width: 48px; height: 4px;
+      background: linear-gradient(90deg, var(--accent), var(--sky));
+      border-radius: 2px;
+      margin-bottom: 3rem;
+    }
+
+    /* ─── ABOUT ─────────────────────────────────────── */
+    #about { background: var(--offwhite); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-card {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 2.5rem;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-card::after {
+      content: '';
+      position: absolute;
+      bottom: -40px; right: -40px;
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      border: 1px solid rgba(133,193,233,0.15);
+    }
+
+    .about-card-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .about-card-title {
+      font-size: 0.85rem;
+      color: var(--sky);
+      margin-bottom: 2rem;
+      font-weight: 500;
+    }
+
+    .about-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .about-detail-icon {
+      width: 32px; height: 32px;
+      background: rgba(133,193,233,0.1);
+      border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+
+    .about-social {
+      display: flex; gap: 0.8rem; margin-top: 2rem;
+    }
+
+    .social-link {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.8);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .social-link:hover { background: rgba(133,193,233,0.15); color: var(--sky); }
+
+    .about-text p {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: #3d5166;
+      margin-bottom: 1.2rem;
+      font-weight: 400;
+    }
+
+    .about-text p strong { color: var(--navy); font-weight: 600; }
+
+    .about-highlights {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .highlight-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.2rem;
+      border-radius: 0 6px 6px 0;
+    }
+
+    .highlight-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1;
+    }
+
+    .highlight-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 0.2rem;
+      line-height: 1.4;
+    }
+
+    /* ─── SKILLS ─────────────────────────────────────── */
+    #skills { background: #fff; }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .skill-group {
+      background: var(--offwhite);
+      border-radius: 10px;
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .skill-group:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(26,82,118,0.1); }
+
+    .skill-group-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .skill-group-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .skill-pills {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+
+    .skill-pill {
+      background: #fff;
+      border: 1px solid var(--border);
+      color: var(--blue);
+      padding: 0.25rem 0.7rem;
+      border-radius: 3px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* ─── PROJECTS ───────────────────────────────────── */
+    #projects { background: var(--offwhite); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(26,82,118,0.12); }
+
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+    }
+
+    .project-image {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+      padding: 3rem;
+      display: flex; align-items: center; justify-content: center;
+      min-height: 200px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-image::before {
+      content: '';
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(133,193,233,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(133,193,233,0.05) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+
+    .project-icon-big {
+      font-size: 4rem;
+      position: relative; z-index: 1;
+    }
+
+    .project-body { padding: 2rem; flex: 1; display: flex; flex-direction: column; }
+
+    .project-domain {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .project-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.8rem;
+      line-height: 1.3;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    .project-outcomes {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .outcome-chip {
+      background: #EBF5FB;
+      color: var(--blue);
+      border: 1px solid #AED6F1;
+      padding: 0.2rem 0.7rem;
+      border-radius: 3px;
+      font-size: 0.73rem;
+      font-weight: 600;
+    }
+
+    .project-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: gap 0.2s;
+    }
+    .project-link:hover { gap: 0.7rem; }
+
+    /* ─── EXPERIENCE ─────────────────────────────────── */
+    #experience { background: #fff; }
+
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--border));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 3rem;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2.45rem;
+      top: 0.3rem;
+      width: 14px; height: 14px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0 0 0 2px var(--accent);
+    }
+
+    .timeline-date {
+      font-family: 'DM Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+
+    .timeline-company {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .timeline-bullets li {
+      font-size: 0.88rem;
+      color: #3d5166;
+      line-height: 1.65;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .timeline-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.7rem;
+      top: 0.22rem;
+    }
+
+    /* ─── CONTACT ─────────────────────────────────────── */
+    #contact {
+      background: var(--navy);
+      color: #fff;
+      text-align: center;
+    }
+
+    #contact .section-title { color: #fff; }
+    #contact .section-label { color: var(--sky); }
+
+    .contact-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 500px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    .contact-links {
+      display: flex; flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem;
+      margin-bottom: 4rem;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 1.5rem 2rem;
+      min-width: 180px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .contact-card:hover { background: rgba(133,193,233,0.1); transform: translateY(-4px); }
+
+    .contact-card-icon { font-size: 1.5rem; margin-bottom: 0.6rem; }
+    .contact-card-label { font-size: 0.72rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+    .contact-card-value { font-size: 0.88rem; color: #fff; font-weight: 500; }
+
+    footer {
+      background: #081422;
+      padding: 1.5rem 4rem;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+
+    footer p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+    /* ─── ANIMATIONS ─────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ─── RESPONSIVE ────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      #hero { padding: 7rem 1.5rem 3rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-stats { display: none; }
+      section { padding: 4rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#hero">Gibi <span>George</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-inner">
+      <div>
+        <p class="hero-label">Business Analyst · Dublin, Ireland</p>
+        <h1 class="hero-name">Gibi<br/><em>George</em></h1>
+        <p class="hero-role">
+          IT Project Delivery · Data Analytics · Governance & Compliance<br/>
+          Bridging business and technology to deliver measurable outcomes.
+        </p>
+        <div class="hero-tags">
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">SQL · Power BI</span>
+          <span class="tag">Python</span>
+          <span class="tag">BRD / FRD</span>
+          <span class="tag">AWS</span>
+          <span class="tag">CI/CD</span>
+        </div>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-outline">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-card">
+          <div class="stat-number">8<span>+</span></div>
+          <div class="stat-label">Projects delivered end-to-end in Agile environments</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">40<span>%</span></div>
+          <div class="stat-label">Reduction in manual compliance reporting time</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">25<span>%</span></div>
+          <div class="stat-label">Fewer deployment errors via CI/CD automation</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">25<span>+</span></div>
+          <div class="stat-label">BRDs & FRDs produced across governance initiatives</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="about-grid reveal">
+        <div>
+          <p class="section-label">Who I Am</p>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-rule"></div>
+          <div class="about-card">
+            <div class="about-card-name">Gibi George</div>
+            <div class="about-card-title">Business Analyst · MSc Business Analytics</div>
+            <div class="about-detail">
+              <span class="about-detail-icon">📍</span>
+              Dublin, Ireland
+            </div>
+            <div class="about-detail">
+              <span class="about-detail-icon">🎓</span>
+              MSc Business Analytics — Dublin Business School
+            </div>
+            <div class="about-detail">
+              <span class="about-detail-icon">📧</span>
+              igibigeorge@gmail.com
+            </div>
+            <div class="about-detail">
+              <span class="about-detail-icon">📞</span>
+              +353 089 941 4147
+            </div>
+            <div class="about-social">
+              <a href="https://www.linkedin.com/in/igibigeorge/" target="_blank" class="social-link">LinkedIn</a>
+              <a href="https://github.com/igibigeorge" target="_blank" class="social-link">GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-text">
+          <p>
+            I'm a results-driven <strong>Business Analyst</strong> based in Dublin with 4+ years of experience spanning IT project delivery, data analytics, governance, and compliance. I hold an MSc in Business Analytics from Dublin Business School, where my dissertation explored ML-driven automation of credit risk assessment.
+          </p>
+          <p>
+            What makes my profile unusual is a <strong>hybrid BA + Site Reliability Engineering</strong> background — meaning I can elicit and document business requirements, and also understand the technical pipeline behind deployment. I've consistently delivered outcomes: cutting deployment errors by 25%, eliminating 40% of manual reporting, and achieving 20% improvements in audit readiness.
+          </p>
+          <p>
+            I'm currently exploring new Business Analyst, Programme Manager, or Data Analyst opportunities in Dublin — roles where I can bridge the gap between complex stakeholder needs and technical delivery.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <div class="highlight-num">20%</div>
+              <div class="highlight-desc">Improved audit readiness across 5 governance initiatives</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num">30%</div>
+              <div class="highlight-desc">Shorter release cycles via CI/CD automation</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num">15+</div>
+              <div class="highlight-desc">Cross-functional stakeholder workshops facilitated</div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-num">4+</div>
+              <div class="highlight-desc">Years of combined BA & SRE experience</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <p class="section-label reveal">What I Bring</p>
+      <h2 class="section-title reveal">Skills & Tools</h2>
+      <div class="section-rule reveal"></div>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <div class="skill-group-icon">📋</div>
+          <div class="skill-group-title">Business Analysis</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Requirements Elicitation</span>
+            <span class="skill-pill">BRD / FRD Writing</span>
+            <span class="skill-pill">Process Mapping</span>
+            <span class="skill-pill">Gap Analysis</span>
+            <span class="skill-pill">UAT Coordination</span>
+            <span class="skill-pill">RAID / RACI</span>
+            <span class="skill-pill">Stakeholder Mgmt</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-icon">📊</div>
+          <div class="skill-group-title">Data & Analytics</div>
+          <div class="skill-pills">
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">Power BI</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Pandas / NumPy</span>
+            <span class="skill-pill">Advanced Excel</span>
+            <span class="skill-pill">Tableau</span>
+            <span class="skill-pill">Google Analytics</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-icon">⚙️</div>
+          <div class="skill-group-title">Project & Delivery</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Agile / Scrum</span>
+            <span class="skill-pill">Kanban</span>
+            <span class="skill-pill">Waterfall / SDLC</span>
+            <span class="skill-pill">Jira</span>
+            <span class="skill-pill">Confluence</span>
+            <span class="skill-pill">MS Project</span>
+            <span class="skill-pill">ServiceNow</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-icon">🔧</div>
+          <div class="skill-group-title">Technical</div>
+          <div class="skill-pills">
+            <span class="skill-pill">AWS</span>
+            <span class="skill-pill">Kubernetes</span>
+            <span class="skill-pill">Terraform</span>
+            <span class="skill-pill">CI/CD</span>
+            <span class="skill-pill">Jenkins</span>
+            <span class="skill-pill">TeamCity</span>
+            <span class="skill-pill">Linux / Bash</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-icon">🏛️</div>
+          <div class="skill-group-title">Governance & Compliance</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Audit Readiness</span>
+            <span class="skill-pill">Access Governance</span>
+            <span class="skill-pill">Risk Management</span>
+            <span class="skill-pill">Change Management</span>
+            <span class="skill-pill">KPI Frameworks</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <div class="skill-group-icon">🎓</div>
+          <div class="skill-group-title">Certifications</div>
+          <div class="skill-pills">
+            <span class="skill-pill">CCNP R&S (Cisco)</span>
+            <span class="skill-pill">CCNA (Cisco)</span>
+            <span class="skill-pill">RHCSA (Red Hat)</span>
+            <span class="skill-pill">RHCE (Red Hat)</span>
+            <span class="skill-pill">Target: CBAP</span>
+            <span class="skill-pill">Target: CSM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <p class="section-label reveal">What I've Built</p>
+      <h2 class="section-title reveal">Key Projects</h2>
+      <div class="section-rule reveal"></div>
+
+      <div class="projects-grid">
+
+        <!-- Featured: MSc Dissertation -->
+        <div class="project-card featured reveal">
+          <div class="project-image">
+            <div class="project-icon-big">🤖</div>
+          </div>
+          <div class="project-body">
+            <div class="project-domain">MSc Dissertation · Machine Learning · Python</div>
+            <div class="project-title">Impacts of Data Analytics in Automating Risk Management</div>
+            <p class="project-desc">
+              Built an end-to-end ML pipeline in Python (Scikit-learn) to automate credit risk assessment. The project covered full data ingestion, feature engineering, model evaluation (Random Forest, Logistic Regression, XGBoost), and executive-level insight reporting — demonstrating how analytics can replace manual underwriting processes.
+            </p>
+            <div class="project-outcomes">
+              <span class="outcome-chip">Python / Scikit-learn</span>
+              <span class="outcome-chip">Credit Risk Automation</span>
+              <span class="outcome-chip">ML Pipeline</span>
+              <span class="outcome-chip">Feature Engineering</span>
+              <span class="outcome-chip">Google Colab</span>
+            </div>
+            <a href="https://colab.research.google.com/drive/1SmetJZVvnd8HVXKIiKLMJ2Ubth92Aj54" target="_blank" class="project-link">View Notebook →</a>
+          </div>
+        </div>
+
+        <!-- Access Governance -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-icon-big">🏛️</div>
+          </div>
+          <div class="project-body">
+            <div class="project-domain">Governance · Compliance · BA Delivery</div>
+            <div class="project-title">Access Governance Programme</div>
+            <p class="project-desc">
+              Led 5 access governance initiatives end-to-end, from requirements through UAT sign-off. Facilitated workshops with 20+ stakeholders across IT, Security, and Operations. Delivered 25+ BRDs and FRDs with full traceability — achieving zero compliance findings post-launch.
+            </p>
+            <div class="project-outcomes">
+              <span class="outcome-chip">20% Audit Readiness ↑</span>
+              <span class="outcome-chip">Zero Compliance Findings</span>
+              <span class="outcome-chip">JIRA · Confluence</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CI/CD Automation -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-icon-big">⚙️</div>
+          </div>
+          <div class="project-body">
+            <div class="project-domain">DevOps · Automation · SRE</div>
+            <div class="project-title">CI/CD Pipeline Automation</div>
+            <p class="project-desc">
+              Scoped and coordinated the automation of deployment pipelines using Jenkins, TeamCity, and Terraform. Delivered a 25% reduction in deployment errors and a 30% shorter release cycle across 3 product teams — directly reducing time-to-market.
+            </p>
+            <div class="project-outcomes">
+              <span class="outcome-chip">25% Fewer Errors</span>
+              <span class="outcome-chip">30% Faster Releases</span>
+              <span class="outcome-chip">Jenkins · Terraform</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reporting Transformation -->
+        <div class="project-card reveal">
+          <div class="project-image">
+            <div class="project-icon-big">📊</div>
+          </div>
+          <div class="project-body">
+            <div class="project-domain">Data Analytics · Business Intelligence</div>
+            <div class="project-title">Compliance Reporting Transformation</div>
+            <p class="project-desc">
+              Designed and deployed 10+ automated SQL and Power BI dashboards that eliminated 40% of manual compliance reporting effort. Freed analyst capacity for higher-value activities and improved data accuracy across governance teams.
+            </p>
+            <div class="project-outcomes">
+              <span class="outcome-chip">40% Manual Work Saved</span>
+              <span class="outcome-chip">10+ Dashboards</span>
+              <span class="outcome-chip">SQL · Power BI</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-inner">
+      <p class="section-label reveal">Where I've Worked</p>
+      <h2 class="section-title reveal">Experience</h2>
+      <div class="section-rule reveal"></div>
+
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Feb 2020 – Mar 2022</div>
+          <div class="timeline-title">Business Analyst / Site Reliability Engineer</div>
+          <div class="timeline-company">Nuaxil Technologies — India</div>
+          <ul class="timeline-bullets">
+            <li>Facilitated 15+ cross-functional stakeholder workshops to elicit and validate requirements for 5 access-governance initiatives; produced 25+ BRDs, FRDs, and process maps across 8 projects.</li>
+            <li>Designed KPI frameworks and built 10+ automated SQL/Power BI dashboards — improving audit readiness by 20% and cutting manual compliance reporting by 40%.</li>
+            <li>Delivered 8 projects in Agile (Jira), leading 2-week sprint planning, backlog refinement, and UAT across 6 product releases with full defect tracking and business sign-off.</li>
+            <li>Automated CI/CD pipelines (Jenkins, TeamCity, Terraform) — reducing deployment errors by 25% and release cycle time by 30%.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-date">Jul 2017 – Sep 2018</div>
+          <div class="timeline-title">Customer Care Executive</div>
+          <div class="timeline-company">Dent Care — India</div>
+          <ul class="timeline-bullets">
+            <li>Managed 600+ tickets/month in ServiceNow (95% SLA compliance); root cause analysis reduced recurring access issues by 15%.</li>
+            <li>Translated 200+ user needs into actionable system changes, improving platform efficiency by 18%.</li>
+            <li>Gathered requirements for 3 digital platform enhancements via structured interviews with 50+ end users; translated into user stories and prioritised change requests.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot" style="background: var(--sky); box-shadow: 0 0 0 2px var(--sky);"></div>
+          <div class="timeline-date">2023</div>
+          <div class="timeline-title">MSc Business Analytics</div>
+          <div class="timeline-company">Dublin Business School — Dublin, Ireland</div>
+          <ul class="timeline-bullets">
+            <li>Dissertation: 'Impacts of Data Analytics in Automating Risk Management' — end-to-end ML pipeline in Python for credit risk automation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <p class="section-label reveal">Let's Connect</p>
+      <h2 class="section-title reveal">Get in Touch</h2>
+      <div class="section-rule" style="margin: 0.5rem auto 1.5rem; background: linear-gradient(90deg, var(--accent), var(--sky));"></div>
+      <p class="contact-sub reveal">
+        Open to Business Analyst, Programme Manager, and Data Analyst opportunities in Dublin. Feel free to reach out.
+      </p>
+      <div class="contact-links reveal">
+        <a href="mailto:igibigeorge@gmail.com" class="contact-card">
+          <div class="contact-card-icon">✉️</div>
+          <div class="contact-card-label">Email</div>
+          <div class="contact-card-value">igibigeorge@gmail.com</div>
+        </a>
+        <a href="tel:+353899414147" class="contact-card">
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-label">Phone</div>
+          <div class="contact-card-value">+353 089 941 4147</div>
+        </a>
+        <a href="https://www.linkedin.com/in/igibigeorge/" target="_blank" class="contact-card">
+          <div class="contact-card-icon">💼</div>
+          <div class="contact-card-label">LinkedIn</div>
+          <div class="contact-card-value">linkedin.com/in/igibigeorge</div>
+        </a>
+        <a href="https://github.com/igibigeorge" target="_blank" class="contact-card">
+          <div class="contact-card-icon">🐙</div>
+          <div class="contact-card-label">GitHub</div>
+          <div class="contact-card-value">github.com/igibigeorge</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 Gibi George · Dublin, Ireland</p>
+    <p>Business Analyst · Data Analytics · IT Project Delivery</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+</body>
 </html>
